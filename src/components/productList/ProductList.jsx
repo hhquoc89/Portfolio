@@ -8,7 +8,7 @@ const ProductList = () => {
       <div className="productList-texts">
         <h1 className="productList-title">Pet Project</h1>
         <p className="productList-desc">
-          sdasdasdsad
+          Ebook
         </p>
       </div>
       <div className="productList-list">
