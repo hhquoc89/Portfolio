@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 
 export const LanguageSelector = () => {
   const { i18n } = useTranslation();
@@ -10,14 +10,18 @@ export const LanguageSelector = () => {
   };
 
   return (
-    <Dropdown >
+    <Dropdown>
       <Dropdown.Toggle variant="second" id="dropdown-basic">
-        Ngôn ngữ
+        Language
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => changeLanguage('en')}>English</Dropdown.Item>
-        <Dropdown.Item onClick={() => changeLanguage('vi')}>Tiếng Việt</Dropdown.Item>
+        <Dropdown.Item onClick={() => changeLanguage("en")}>
+          English
+        </Dropdown.Item>
+        <Dropdown.Item onClick={() => changeLanguage("vi")}>
+          Tiếng Việt
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

@@ -14,72 +14,71 @@ import projImg51 from "../assets/img/51.png";
 import projImg61 from "../assets/img/61.png";
 
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
-
   const projects1 = [
     {
       title: "E-commerce",
-      description: "Trang chủ",
+      description: "Home",
       imgUrl: projImg1,
     },
     {
       title: "E-commerce",
-      description: "Danh sách sản phẩm",
+      description: "List product",
       imgUrl: projImg2,
     },
     {
       title: "E-commerce",
-      description: "Đăng nhập",
+      description: "Login",
       imgUrl: projImg3,
     },
     {
       title: "E-commerce",
-      description: "Chi tiết sản phẩm",
+      description: "Product details",
       imgUrl: projImg4,
     },
     {
       title: "E-commerce",
-      description: "Giỏ hàng",
+      description: "Cart",
       imgUrl: projImg5,
     },
     {
       title: "E-commerce",
-      description: "Đăng kí",
+      description: "Register",
       imgUrl: projImg6,
     },
   ];
   const projects2 = [
     {
-      title: "Review Phim",
+      title: "Review film",
       description: "Splash",
       imgUrl: projImg11,
     },
     {
-      title: "Review Phim",
-      description: "Trang chủ",
+      title: "Review film",
+      description: "Home",
       imgUrl: projImg21,
     },
     {
-      title: "Review Phim",
-      description: "Đăng nhập",
+      title: "Review film",
+      description: "Login",
       imgUrl: projImg31,
     },
     {
-      title: "Review Phim",
-      description: "Chi tiết diễn viên",
+      title: "Review film",
+      description: "Actor information",
       imgUrl: projImg41,
     },
     {
-      title: "Review Phim",
-      description: "Tìm kiếm phim",
+      title: "Review film",
+      description: "Search films",
       imgUrl: projImg51,
     },
     {
-      title: "Review Phim",
-      description: "Chi tiết bộ phim",
+      title: "Review film",
+      description: "Film detail",
       imgUrl: projImg61,
     },
   ];
@@ -121,62 +120,64 @@ export const Projects = () => {
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Các dự án</h2>
-                <p>Bao gồm các dự án nhỏ tôi đã làm được trong quá trình coding của tôi</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">E-commerce</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Ứng dụng review phim</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Ứng dụng ghi chú</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects1.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="second">
-                    <Row>
-                        {
-                          projects2.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                    <p>Đợi tí gần xong rồi :D</p>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <h2>Pet Project</h2>
+                  <p>Includes small projects I worked on during my coding</p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      id="pills-tab"
+                    >
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">E-commerce</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">
+                          Ứng dụng Review film
+                        </Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">Ứng dụng ghi chú</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content
+                      id="slideInUp"
+                      className={
+                        isVisible ? "animate__animated animate__slideInUp" : ""
+                      }
+                    >
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects1.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+                      <Tab.Pane eventKey="second">
+                        <Row>
+                          {projects2.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <p>Đợi tí gần xong rồi :D</p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
       <img className="background-image-right" src={colorSharp2}></img>
     </section>
-  )
-}
+  );
+};
